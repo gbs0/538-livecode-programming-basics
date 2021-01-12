@@ -1,6 +1,6 @@
 require 'date'
 
-def day_until_xmas()
+def day_until_xmas(today)
   # today = Date.today
   year = today.year
   xmas = Date.new(year, 12, 25)
