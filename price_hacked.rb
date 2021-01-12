@@ -1,18 +1,21 @@
-# Random price between 1 and 100 chosen by the program.
+# Peek a Random price between 1 and 100
 price = (1..100).to_a.sample
+
+# Initial number of tries
 tries = 0
 
+
+# The program should keep asking until the player guesses the right price. 
 loop do
-  # The program should keep asking until the player guesses the right price. 
   puts "Qual o seu palpite?"
 
-  guess = gets.chomp
+  guess = gets.chomp # Get input from user
   
-  if guess == "dica"
+  if guess == "dica" # Give a tip for the player
   	puts price
   end
 
-  if guess == "hack"
+  if guess == "hack" # Computer will try by itself
   	(1..100).to_a.each do |number|
   	 puts "Tentando o numero #{number}"
   	 tries += 1
@@ -20,10 +23,10 @@ loop do
   	end
   	break
   end
-  # tries = tries + 1
-  tries += 1
+  
+  tries += 1 # OR tries = tries + 1
 
-  break if guess.to_i == price
+  break if guess.to_i == price # Break the loop if guess is correct!
  
 end
 
